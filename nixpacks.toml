@@ -1,11 +1,12 @@
-[phases.setup]
-nixPkgs = ["nodejs-20_x", "nodePackages.npm", "python3", "gcc", "gnumake"]
-
 [phases.install]
-cmds = ["npm install"]
+cmds = [
+  "apt-get update -y && apt-get install -y python3 make g++",
+  "npm install"
+]
 
 [phases.build]
 cmds = ["npm run build"]
 
 [start]
 cmd = "NODE_ENV=production node dist/index.cjs"
+
