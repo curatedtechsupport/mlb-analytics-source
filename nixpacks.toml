@@ -1,7 +1,7 @@
 [phases.install]
 cmds = [
   "apt-get update -y && apt-get install -y python3 make g++",
-  "npm install"
+  "npm install --include=dev"
 ]
 
 [phases.build]
@@ -9,4 +9,3 @@ cmds = ["npm run build"]
 
 [start]
 cmd = "NODE_ENV=production node dist/index.cjs"
-
